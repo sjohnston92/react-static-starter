@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import { Switch, Route } from 'react-router'
 import Home from './pages/Home'
 import About from './pages/About'
+import Navigator from './components/Navigator'
 
 //This is for light and darkmode
 import {createGlobalStyle, ThemeProvider} from 'styled-components'
@@ -35,7 +36,8 @@ const App = () => {
       }}}
     >
       <GlobalStyle/>
-      <ThemeNav changeDark={changeDark} changeLight={changeLight}/>
+      <Navigator theme={theme}/>
+      <ThemeNav theme={theme} changeDark={changeDark} changeLight={changeLight}/>
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route exact path="/about" component={About}/>
